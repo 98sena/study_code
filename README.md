@@ -1,3 +1,3 @@
-# owning_the
+# study_code
 
 ### ACM 공부 
