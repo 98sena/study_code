@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+	char word[100];
+	cin >> word;
+	int len = sizeof(word) / sizeof(*word);
+	for (int i = 97; i < 123; i++) {
+		int cnt = 0;
+		for (int j = 0; j < len; j++) {
+			if (int(word[j]) == i) {
+				cout << j << " ";
+				break;
+			}
+			else cnt++;
+		}
+		if (cnt == 100) cout << "-1 ";
+	}
+	return 0;
+}
+
+//근데 틀렸음 예외를 못찾겠다.. today was Oct 1, 2019. SO SADDD
