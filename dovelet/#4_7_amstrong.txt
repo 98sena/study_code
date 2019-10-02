@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	for (int A = 1; A < 10; A++) {
+		for (int B = 0; B < 10; B++) {
+			for (int C = 0; C < 10; C++) {
+				if ((A * 100 + B * 10 + C) == (A*A*A + B * B*B + C * C*C)) {
+					cout << A << B << C << endl;
+				}
+			}
+		}
+	}
+	return 0;
+}
+//0.01ÃÊ
