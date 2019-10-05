@@ -4,6 +4,7 @@ using namespace std;
 
 int main() {
 	char word[100];
+	fill_n(word, 100, 0); // 이부분 추가 191005
 	cin >> word;
 	int len = sizeof(word) / sizeof(*word);
 	for (int i = 97; i < 123; i++) {
@@ -20,4 +21,5 @@ int main() {
 	return 0;
 }
 
-//근데 틀렸음 예외를 못찾겠다.. today was Oct 1, 2019. SO SADDD
+//근데 틀렸음 예외를 못찾겠다.. today was Oct 1, 2019.
+//찾았다!!! 배열 사이즈가 100개까지라 입력받은 문자열을 넘어선 배열 값에 아무 숫자가 들어간다는 사실을 잊었다!!!!
