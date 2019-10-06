@@ -1,0 +1,36 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int fun(int n,int len) {
+	len++;
+	if (n == 1) return len;
+	if (n % 2 == 0) {
+		return fun(n / 2, len);
+	}
+	else {
+		return fun(n * 3 + 1, len);
+	}
+}
+int main() {
+	int a, b;
+	cin >> a >> b;
+	if (a > b) {
+		int tmp = a;
+		a = b;
+		b = tmp;
+	}
+	int len[10000];
+	fill_n(len, 10000, 0);
+	int max = 0;
+	for (int i = a; i < b + 1; i++) {
+		len[i] = fun(i, len[i]);
+		if (max < len[i]) {
+			max = len[i];
+		}
+	}
+	cout << max;
+	return 0;
+}
+//0.11ÃÊ 
