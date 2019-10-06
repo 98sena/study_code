@@ -29,3 +29,53 @@ int main() {
 // 일단 틀렸음 191006
 /* 0 10 0 10세트와 9 19 9 19가 문젠데 내가 생각했던 위 방법 대로 문제를 풀면
 합이 360이 부족한 1530이 된다 (원래 답은 1890);; 뭘까 시계 방향과 반시계 방향의 문젠데,,,*/
+
+//이해했다 내가 생각했던 건 시계의 움직임이라 그것과 반대로 생각해야함;;;;
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int sign(int n) {
+	if (n < 0) return -n;
+	else return n;
+}
+
+int main() {
+	int num[4];
+	int cnt = 0;
+	int sum = 0;
+	while (cnt <3) {
+		cnt = 0; sum = 0;
+		for (int i = 0; i < 4; i++) {
+			cin >> num[i];
+			if (i > 0 && (num[i] == num[i - 1])) {
+				sum++;
+			}
+			else if (i > 0 && (num[i] != num[i - 1])) {
+				sum = 0;
+			}
+		}
+		for (int i = 0; i < 4; i++) {
+			if (num[i] == 0) {
+				cnt++;
+			}
+			if (sum == 3) {
+				cout << 40 * 3 * 9;
+				return 0;
+			}
+			if (cnt == 4) {
+				return 0;
+			}
+			if (i % 2 == 0) {
+				num[i] += 40;
+			}
+		}
+		for (int i = 0; i <3; i++) {
+			sum += sign((num[i + 1] - num[i]));
+			cout << i << "는 " << sum << endl;
+		}
+		cout << (sum + 40 * 3) * 9;
+	}
+	return 0;
+}
+/*근데 또틀림; ㅋㅋ;ㅋㅋ;ㅋ;ㅋㅋ;;ㅋㅋ; 같은 숫자를 입력햇을때 생기는 오류가 있나해서 그것까지 구분하였지만
+하튼 틀렸다 Oct 6,2019*/
