@@ -1,0 +1,39 @@
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+int main() {
+	int N;
+	cin >> N;
+	int nor[7];
+	int plus;
+	for (int i = 0; i < N; i++) {
+		cin >> nor[i];
+		cin >> plus;
+		nor[i] += plus;
+	}
+	int cnt = 0;
+	int max = nor[0];
+	plus = 0;
+	for (int i = 0; i < N; i++) {
+		if (nor[i] <= 8) {
+			cnt++;
+		}
+		if (max <  nor[i]) {
+			max = nor[i];
+			plus = i;
+		}
+	}
+	if (cnt == N) {
+		cout << 0;
+	}
+	else {
+		cout << plus + 1;
+	}
+	return 0;
+}
+//0.11초 음 음 좀더 간단했으면 좋겟따
+/* 모든 수를 더해 그 중에서 max를 찾고 max가 8이하이면 0을 출력 ,, 이게 더 시간면에선 이득일 것 같다.
+굳이 카운트 안해도,,되잖아,,,*/
+
