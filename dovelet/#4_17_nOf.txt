@@ -1,0 +1,22 @@
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+int main() {
+	int n, m;
+	cin >> n >> m;
+	int cnt = 0;
+	for (int i = 2; i <= n; i++) {
+		if (i % m == 0) {
+			int num = i;
+			while (num %m==0) {
+				cnt++;
+				num = num / m;
+			}
+		}
+	}
+	cout << cnt;
+	return 0;
+}
+//0.14s
