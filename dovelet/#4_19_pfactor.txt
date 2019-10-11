@@ -1,0 +1,42 @@
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+
+	for (int i = 2; i < n; i++) {
+		while (n%i==0) {
+			cout << i << " ";
+			n = n / i;
+		}
+	}
+	if(n!=1) cout << n;
+	return 0;
+} //0.01s 전에는 if(n%i==0) 안에 while(n%i==0)을 했는데 생각해보니깐 if가 필요가 없었다.. while 괄호 안에가 참이어야지 실행되니깐...
+
+/*
+for(i=n/2;i>1;i++){
+	if(n%i==0){
+		print(n/i)
+		n=i)
+	}
+}
+print(n)
+
+n=10
+i=5 10%5>1 n=5 out : 2
+i=4 5%4>0
+i=3 5%3>0
+i=2 5%2>0
+
+out:5
+
+n=20
+
+i=10 20%10>1 n=10 out:2
+헐랭... 신기해,.,.,.,.
+>> 생각지도 못했다,,,,,
+왜 2를 나누고 시작하는가????? >>>> oct 11,2019
+*/

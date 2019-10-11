@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int main() {
+	int num, f,b;
+	cin >> num;
+	int nextf = 0, cnt = 2, max = 0;
+	for (int i = 1; i < num+ 1; i++) {
+		f = num; b = i; cnt = 2;
+		while (f >= b) {
+			cnt++;
+			nextf = b;
+			b = f - b;
+			f = nextf;
+		}
+		if (max < cnt) {
+			max = cnt;
+		}
+	}
+	
+	cout << max;
+	return 0;
+} //0.17s
