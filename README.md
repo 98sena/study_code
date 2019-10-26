@@ -1,3 +1,3 @@
 # study_code
 
-### paused for my 2019-2 mid term Oct 12 - 23
+### paused for my 2019-2 mid term Oct 12 - 25
